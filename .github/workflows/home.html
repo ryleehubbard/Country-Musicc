@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Roads Music - Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f7f2;
+        }
+        
+        header {
+            background: linear-gradient(to right, #8b4513, #d2691e);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #d2691e;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #d2691e;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #8b4513;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 2rem 0;
+            color: #8b4513;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .feature-box h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-box img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+        
+        .recent-news {
+            background-color: #e6dfd1;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .news-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-content h3 {
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .event-list {
+            margin-bottom: 3rem;
+        }
+        
+        .event-item {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            border-bottom: 1px solid #ddd;
+            padding: 1.5rem 0;
+        }
+        
+        .event-item:last-child {
+            border-bottom: none;
+        }
+        
+        .event-date {
+            font-weight: bold;
+            color: #8b4513;
+        }
+        
+        .event-location {
+            color: #666;
+        }
+        
+        .testimonials {
+            background-color: #d2691e;
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .testimonial-author {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .newsletter {
+            background-color: #e6dfd1;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            padding: 0.8rem 1.5rem;
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #6b3811;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #d2691e;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #d2691e;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 4px;
+                margin-bottom: 1rem;
+            }
+            
+            .newsletter-form button {
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Country Roads Music</h1>
+            <p>Your Home for Authentic Country Music</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="materialize-demo.html">Features</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h2>Experience the Heart and Soul of Country Music</h2>
+        <p>From classic legends to today's rising stars, Country Roads Music brings you the authentic sounds of country in one place.</p>
+        <a href="artists.html" class="btn">Explore Artists</a>
+    </section>
+    
+    <main class="container">
+        <h2 class="section-title">Welcome to Country Roads Music</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Discover the biggest names in country music, stay updated with the latest releases, and find upcoming concerts and events. Country Roads Music is your ultimate destination for everything country.</p>
+        
+        <section class="three-column">
+            <div class="feature-box">
+                <img src="/api/placeholder/200/200" alt="Legendary Artists">
+                <h3>Legendary Artists</h3>
+                <p>Explore the timeless classics from Johnny Cash, Dolly Parton, Willie Nelson, and other country legends who shaped the genre.</p>
+                <a href="#" class="btn">View Legends</a>
+            </div>
+            <div class="feature-box">
+                <img src="/api/placeholder/200/200" alt="Modern Country">
+                <h3>Modern Country</h3>
+                <p>Discover today's chart-toppers like Luke Combs, Miranda Lambert, and Chris Stapleton who are carrying the country tradition forward.</p>
+                <a href="#" class="btn">View Artists</a>
+            </div>
+            <div class="feature-box">
+                <img src="/api/placeholder/200/200" alt="Live Events">
+                <h3>Live Events</h3>
+                <p>Find upcoming concerts, festivals, and special events featuring your favorite country music performers.</p>
+                <a href="#" class="btn">View Calendar</a>
+            </div>
+        </section>
+        
+        <section class="recent-news">
+            <div class="container">
+                <h2 class="section-title">Latest Country News</h2>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <img src="/api/placeholder/300/200" alt="New Album Release">
+                        <div class="news-content">
+                            <span class="date">April 1, 2025</span>
+                            <h3>Luke Combs Announces New Album</h3>
+                            <p>Country superstar Luke Combs has announced his highly anticipated new album will be released this summer.</p>
+                            <a href="#" class="btn">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="/api/placeholder/300/200" alt="Award Show">
+                        <div class="news-content">
+                            <span class="date">March 28, 2025</span>
+                            <h3>Country Music Awards Preview</h3>
+                            <p>Get ready for country music's biggest night as we preview the upcoming awards ceremony and its nominations.</p>
+                            <a href="#" class="btn">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="/api/placeholder/300/200" alt="Tour Announcement">
+                        <div class="news-content">
+                            <span class="date">March 25, 2025</span>
+                            <h3>Miranda Lambert Announces World Tour</h3>
+                            <p>Miranda Lambert will be hitting the road this fall with her new world tour spanning 35 cities.</p>
+                            <a href="#" class="btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="upcoming-events">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-date">April 15, 2025</div>
+                    <div class="event-name">Chris Stapleton Concert</div>
+                    <div class="event-location">Nashville, TN - Grand Ole Opry</div>
+                    <div class="event-action"><a href="#" class="btn">Get Tickets</a></div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">April 22-24, 2025</div>
+                    <div class="event-name">Country Music Festival</div>
+                    <div class="event-location">Austin, TX - Zilker Park</div>
+                    <div class="event-action"><a href="#" class="btn">Get Tickets</a></div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">May 5, 2025</div>
+                    <div class="event-name">Kacey Musgraves Tour</div>
+                    <div class="event-location">Denver, CO - Red Rocks Amphitheatre</div>
+                    <div class="event-action"><a href="#" class="btn">Get Tickets</a></div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">May 18, 2025</div>
+                    <div class="event-name">Luke Combs Concert</div>
+                    <div class="event-location">Atlanta, GA - Mercedes-Benz Stadium</div>
+                    <div class="event-action"><a href="#" class="btn">Get Tickets</a></div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" class="btn">View All Events</a>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title" style="color: white;">What Our Fans Say</h2>
+                <div class="testimonial-quote">
+                    "Country Roads Music is my go-to source for everything country. I discovered so many amazing artists through their recommendations, and their event calendar has never let me miss a show in my area!"
+                </div>
+                <div class="testimonial-author">- Sarah J., Nashville</div>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <div class="container">
+                <h2 class="section-title">Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest country music news, releases, and event announcements.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <h3>Country Roads Music</h3>
+            <p>Your destination for everything country</p>
+            <div class="social-icons">
+                <a href="#">F</a>
+                <a href="#">T</a>
+                <a href="#">I</a>
+                <a href="#">Y</a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Advertise</a>
+            </div>
+            <p>&copy; 2025 Country Roads Music. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Music - Materialize Demo</title>
+    
+    <!-- Import Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Import Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f9f7f2;
+        }
+        
+        .carousel {
+            height: 400px !important;
+        }
+        
+        .carousel .carousel-item {
+            width: 300px !important;
+            height: 300px !important;
+        }
+        
+        .collapsible-header {
+            background-color: #e6dfd1;
+        }
+        
+        .collapsible-header.active {
+            background-color: #d2691e;
+            color: white;
+        }
+        
+        .collapsible-body {
+            background-color: white;
+        }
+        
+        .page-header {
+            background: linear-gradient(to right, #8b4513, #d2691e);
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            color: #8b4513 !important;
+            font-weight: bold !important;
+        }
+        
+        nav {
+            background-color: #333;
+        }
+        
+        .btn {
+            background-color: #d2691e;
+        }
+        
+        .btn:hover {
+            background-color: #8b4513;
+        }
+        
+        footer {
+            background-color: #333;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Country Roads Music</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li class="active"><a href="materialize-demo.html">Features</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li class="active"><a href="materialize-demo.html">Features</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container center-align">
+            <h1>Featured Country Artists</h1>
+            <p class="flow-text">Explore our top artists using Materialize components</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h3 class="center-align">Artist Showcase</h3>
+                <p class="center-align">Swipe through our featured country music artists</p>
+            </div>
+        </div>
+        
+        <!-- Carousel Section -->
+        <div class="row">
+            <div class="col s12">
+                <div class="carousel">
+                    <a class="carousel-item" href="#one!">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="/api/placeholder/300/300" alt="Johnny Cash">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Johnny Cash</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="carousel-item" href="#two!">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="/api/placeholder/300/300" alt="Dolly Parton">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Dolly Parton</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="carousel-item" href="#three!">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="/api/placeholder/300/300" alt="Chris Stapleton">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Chris Stapleton</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="carousel-item" href="#four!">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="/api/placeholder/300/300" alt="Luke Combs">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Luke Combs</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="carousel-item" href="#five!">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="/api/placeholder/300/300" alt="Miranda Lambert">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Miranda Lambert</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collapsible Section -->
+        <div class="row">
+            <div class="col s12">
+                <h3 class="center-align">Artist Information</h3>
+                <p class="center-align">Click to expand and learn more about each artist</p>
+                
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">person</i>Johnny Cash
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <p>Johnny Cash (February 26, 1932 – September 12, 2003) was an American singer, songwriter, musician, and actor. Much of Cash's music contained themes of sorrow, moral tribulation, and redemption, especially in the later stages of his career. He was known for his deep, calm bass-baritone voice, the distinctive sound of his Tennessee Three backing band characterized by train-like chugging guitar rhythms, a rebelliousness coupled with an increasingly somber and humble demeanor, free prison concerts, and a trademark all-black stage wardrobe which earned him the nickname "The Man in Black."</p>
+                                <a class="btn waves-effect waves-light" href="#">Learn More</a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">person</i>Dolly Parton
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <p>Dolly Rebecca Parton (born January 19, 1946) is an American singer-songwriter, actress, philanthropist, and businesswoman, known primarily for her work in country music. After achieving success as a songwriter for others, Parton made her album debut in 1967 with Hello, I'm Dolly, which led to success during the remainder of the 1960s, before her sales and chart peak came during the 1970s and continued into the 1980s. Parton is known for her distinctive soprano voice, flamboyant fashion sense, and her humanitarian efforts.</p>
+                                <a class="btn waves-effect waves-light" href="#">Learn More</a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">person</i>Chris Stapleton
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <p>Christopher Alvin Stapleton (born April 15, 1978) is an American singer-songwriter, guitarist, and record producer. He was born in Lexington, Kentucky, and grew up in Staffordsville, Kentucky. After establishing a career as a songwriter for other artists, Stapleton released his debut studio album Traveller in 2015, which reached number one on the US Billboard 200 and was certified triple platinum by the Recording Industry Association of America (RIAA). His music style has been described as a blend of country, classic rock and Southern soul.</p>
+                                <a class="btn waves-effect waves-light" href="#">Learn More</a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">person</i>Luke Combs
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <p>Luke Albert Combs (born March 2, 1990) is an American country music singer and songwriter. Combs has released several albums and singles that have topped the country music charts. His style is a blend of traditional and contemporary country music, and he is known for his powerful vocals and relatable lyrics. Combs has broken numerous records in country music for consecutive number-one singles and album sales, establishing himself as one of the genre's biggest stars.</p>
+                                <a class="btn waves-effect waves-light" href="#">Learn More</a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">person</i>Miranda Lambert
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                <p>Miranda Leigh Lambert (born November 10, 1983) is an American country music singer and songwriter. She started her career in early 2001 when she released her self-titled debut album independently. In 2003, she finished third on the television program Nashville Star, a singing competition which aired on the USA Network. Lambert is known for her powerful vocals, songwriting prowess, and for integrating rock and roll elements into her country music. She has won numerous awards for her music including Grammy Awards and many Country Music Association Awards.</p>
+                                <a class="btn waves-effect waves-light" href="#">Learn More</a>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">Country Roads Music</h5>
+                    <p class="grey-text text-lighten-4">Your destination for authentic country music.</p>
+                </div>
+                <div class="col s12 m6">
+                    <h5 class="white-text">Connect With Us</h5>
+                    <div class="row">
+                        <div class="col s2"><i class="material-icons">facebook</i></div>
+                        <div class="col s2"><i class="material-icons">music_note</i></div>
+                        <div class="col s2"><i class="material-icons">share</i></div>
+                        <div class="col s2"><i class="material-icons">email</i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Country Roads Music. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Import JQuery and Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- Custom JS Initialization -->
+    <script>
+        $(document).ready(function(){
+            // Initialize sidenav
+            $('.sidenav').sidenav();
+            
+            // Initialize carousel with custom options
+            $('.carousel').carousel({
+                numVisible: 5,
+                indicators: true,
+                padding: 10,
+                duration: 200,
+                dist: -30,
+                shift: 20,
+                fullWidth: false
+            });
+            
+            // Auto-scroll carousel
+            setInterval(function() {
+                $('.carousel').carousel('next');
+            }, 3000);
+            
+            // Initialize collapsible
+            $('.collapsible').collapsible({
+                accordion: false
+            });
+        });
+    </script>
+</body>
+</html>
