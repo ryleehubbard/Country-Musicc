@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Music Artists</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f7f2;
+        }
+        
+        header {
+            background: linear-gradient(to right, #8b4513, #d2691e);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #d2691e;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin: 2rem 0;
+            color: #8b4513;
+        }
+        
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .artist-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .artist-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .artist-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .artist-info {
+            padding: 1.5rem;
+        }
+        
+        .artist-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #8b4513;
+        }
+        
+        .artist-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background-color: #d2691e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: #8b4513;
+        }
+        
+        .featured-artist {
+            background-color: #f5f0e6;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .featured-artist-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .featured-artist-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .featured-artist-info {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .category-button {
+            background-color: #e6dfd1;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .category-button:hover, .category-button.active {
+            background-color: #d2691e;
+            color: white;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #d2691e;
+        }
+        
+        @media (max-width: 768px) {
+            .artists-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .featured-artist {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Country Roads Music</h1>
+            <p>Your Home for Authentic Country Music</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="albums.html">Albums</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <h2 class="page-title">Country Music Artists</h2>
+        
+        <div class="categories">
+            <button class="category-button active">All</button>
+            <button class="category-button">Classic Country</button>
+            <button class="category-button">Modern Country</button>
+            <button class="category-button">Country Pop</button>
+            <button class="category-button">Outlaw Country</button>
+            <button class="category-button">Bluegrass</button>
+        </div>
+        
+        <section class="featured-artist">
+            <div class="featured-artist-image">
+                <img src="/api/placeholder/600/400" alt="Featured Country Artist">
+            </div>
+            <div class="featured-artist-info">
+                <h2>Featured Artist: Chris Stapleton</h2>
+                <p>Chris Stapleton has established himself as one of the most respected and beloved artists in country music today. With his powerful, soulful voice and masterful songwriting, Stapleton has breathed new life into the genre while honoring its rich traditions.</p>
+                <p>Having written numerous hit songs for other artists before stepping into the spotlight himself, Stapleton's debut solo album "Traveller" (2015) earned critical acclaim and multiple Grammy Awards, cementing his place in country music history.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </section>
+        
+        <div class="artists-grid">
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="Johnny Cash" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">Johnny Cash</h3>
+                    <p class="artist-description">The legendary "Man in Black" whose distinctive voice and rebellious spirit defined an era of country music.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="Dolly Parton" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">Dolly Parton</h3>
+                    <p class="artist-description">An iconic songwriter, vocalist, and philanthropist who has charmed audiences for decades with her talent and personality.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="Luke Combs" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">Luke Combs</h3>
+                    <p class="artist-description">A modern country sensation known for his authentic sound and record-breaking string of number one hits.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="Kacey Musgraves" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">Kacey Musgraves</h3>
+                    <p class="artist-description">A progressive voice in country music who blends traditional elements with contemporary themes and sounds.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="Willie Nelson" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">Willie Nelson</h3>
+                    <p class="artist-description">An outlaw country pioneer and American music treasure with a career spanning seven decades.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="Miranda Lambert" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">Miranda Lambert</h3>
+                    <p class="artist-description">A powerhouse vocalist and songwriter known for her emotional depth and authentic country sound.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="George Strait" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">George Strait</h3>
+                    <p class="artist-description">The "King of Country" with more number one hits than any artist in any genre of music.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="artist-card">
+                <img src="/api/placeholder/400/400" alt="Carrie Underwood" class="artist-image">
+                <div class="artist-info">
+                    <h3 class="artist-name">Carrie Underwood</h3>
+                    <p class="artist-description">A powerhouse vocalist who has successfully bridged the gap between country and mainstream pop.</p>
+                    <a href="#" class="read-more">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <h3>Country Roads Music</h3>
+            <p>Your destination for everything country</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Advertise</a>
+            </div>
+            <p>&copy; 2025 Country Roads Music. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,531 @@
+/* 
+   Country Roads - Country Music Website
+   Main Stylesheet
+*/
+
+/* Base Styles and Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f3e9;
+    color: #3e2e1e;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+    color: #3e2e1e;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #8b4513;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #d4af37;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+/* Header */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background-color: #3e2e1e;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #f9f3e9;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: #d4af37;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a.active {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 3rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #3e2e1e;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #b8962f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-large {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-secondary {
+    background-color: #3e2e1e;
+    color: #f9f3e9;
+}
+
+.btn-secondary:hover {
+    background-color: #59432d;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Cards and Featured Content */
+.featured {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content p {
+    flex-grow: 1;
+}
+
+.card-content .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Events Section */
+.upcoming-events {
+    background-color: #3e2e1e;
+    color: #f9f3e9;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+}
+
+.upcoming-events h2 {
+    color: #f9f3e9;
+    border-color: #d4af37;
+}
+
+.upcoming-events h3 {
+    color: #f9f3e9;
+    border: none;
+    margin-bottom: 0.5rem;
+}
+
+.event {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
+}
+
+.event:last-child {
+    border-bottom: none;
+    margin-bottom: 1rem;
+}
+
+.event-date {
+    background-color: #d4af37;
+    color: #3e2e1e;
+    min-width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.event-date .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.event-date .day {
+    font-size: 1.8rem;
+}
+
+.event-info {
+    flex-grow: 1;
+}
+
+.event-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Newsletter Section */
+.newsletter {
+    background-color: #f0e6d2;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.newsletter h2 {
+    border-bottom: none;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #d4af37;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 4px 4px 0;
+}
+
+/* Featured Playlist */
+.featured-playlist {
+    margin: 3rem 0;
+}
+
+.playlist-container {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.playlist-tracks {
+    padding: 1.5rem;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.track:last-child {
+    border-bottom: none;
+}
+
+.track-number {
+    width: 30px;
+    height: 30px;
+    background-color: #d4af37;
+    color: #3e2e1e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.track-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.track-title {
+    font-weight: bold;
+}
+
+.track-artist {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.track-duration {
+    color: #777;
+}
+
+.playlist-container .btn {
+    align-self: center;
+    margin: 1rem 0 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #3e2e1e;
+    color: #f9f3e9;
+    padding: 3rem 0 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #f9f3e9;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section .logo {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #f9f3e9;
+}
+
+.footer-section ul li a:hover {
+    color: #d4af37;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background-color: #d4af37;
+    color: #3e2e1e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.icon:hover {
+    background-color: #b8962f;
+}
+
+.footer-bottom {
+    background-color: #2d2218;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #f9f3e9;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .featured {
+        grid-template-columns: 1fr;
+    }
+    
+    .event {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .newsletter-form .btn {
+        border-radius: 4px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+    }
+    
+    .footer-links {
+        margin-top: 1rem;
+    }
+    
+    .footer-links a {
+        margin: 0 0.5rem;
+    }
+}
